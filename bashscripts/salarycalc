@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#salary calculator
+echo -n "Kindly enter your monthly salary:"
+read salary
+echo -n "Kindly enter your monthly tax in percent:"
+read tax
+tamt=$( "scale=2 $salary*($tax/100) " | bc -l )
+toatl=$(($tamt+$salary))
+echo " Your total monthly salary is ${total} rupees "
