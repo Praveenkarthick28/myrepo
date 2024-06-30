@@ -9,5 +9,5 @@ read year
 echo "printing cal for ${year}"
 
 ################################################
-cal ${year}
+cal $year
 
