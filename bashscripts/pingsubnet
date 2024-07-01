@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ #this is to ping all the server in the subnet
+for((i=0;i<256;i++)); do
+    ip=23.227.36.$i
+    ping -c 1 $ip >> /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo "Server $ip is up and running."
+    else
+        echo "Server $ip is unreachable."
+    fi
+done
