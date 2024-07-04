@@ -3,7 +3,7 @@ agent any
 stages {
   stage ('checkout code') {
       steps {
-          sh ' echo "checkout passed"
+          sh ' echo "checkout passed" '
           }
         }
   stage ('Build and test') {
