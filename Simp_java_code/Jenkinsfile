@@ -9,7 +9,8 @@ stages {
         }
   stage ('Build and test') {
       steps {
-          sh ' cd Simp_java_code && mvn clean && mvn install ' 
+           sh 'ls -ltr'
+           sh ' cd Simp_java_code && mvn clean && mvn install ' 
           }
         }
   stage ('build and push docker image') {
