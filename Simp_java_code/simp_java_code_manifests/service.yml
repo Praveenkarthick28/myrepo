@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: service
+metadata:
+   name: simp_java_code
+   labels:
+      app: simp_java_code
+spec:
+   type: NodePort
+   ports: 
+      - name: http
+        port: 80
+        targetPort: 8080
+        protocol: TCP
+   selector:
+      matchlabels:
+          app: simp_java_code
