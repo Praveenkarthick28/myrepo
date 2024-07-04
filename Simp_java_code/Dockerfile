@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-ARG artifact=target/*.jar
+ARG artifact=target/Simp_java_code.jar
 
 WORKDIR opt/app
  #open the folder you need to place
