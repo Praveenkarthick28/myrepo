@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+   name: simp_java_code
+   labels:
+      app: simp_java_code
+spec: 
+   replicas: 2
+   selector:
+      matchlabels :
+          name: simp_java_code
+   template:
+      metadata:
+        labels: 
+          name: simp_java_code
+      spec: 
+         containers:
+           -name: simp_java_code
+            image: karthickdocker28/javacoder:replaceimagetag
+            ports:
+              -containerPort: 8080
