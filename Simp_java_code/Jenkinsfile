@@ -28,14 +28,14 @@ stages {
 
   stage ('updating manifestfile') {
           environment {
-                GIT_USER_NAME=Praveenkarthick28
-                GIT_REPO_NAME=myrepo
+                GIT_USER_NAME= Praveenkarthick28
+                GIT_REPO_NAME= myrepo
                }
                 steps { 
                    sh '''
                      git config user.email "karthikjeeva619@gmail.com"
                      git config user.name "praveen"
-                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" simp_java_code/simp_java_code_manifest/deployment.yml
+                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" simp_java_code/simp_java_code_manifests/deployment.yml
                      git add simp_java_code/simp_java_code_manifest/deployment.yml && git commit -m " updating version: $BUILD_NUMBER"
                      git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                      echo " succesfully updated the new image "
@@ -44,7 +44,7 @@ stages {
         }
   stage ('deploying') {
       steps {
-          sh 'cd simp_java_code/simp_java_code_manifest/ && kubectl apply -f deployment deployment.yml'
+          sh 'cd simp_java_code/simp_java_code_manifests/ && kubectl apply -f deployment deployment.yml'
           sh 'kubectl apply -f svc service.yml'
             }
         }
