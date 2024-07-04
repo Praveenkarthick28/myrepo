@@ -13,7 +13,7 @@ stages {
           }
         }
   stage ('build and push docker image') {
-       ENV {
+       environment {
             DOCKER_IMAGE = "karthickdocker28/javacoder:$BUILD_NUMBER"
             REGISTRY_CREDENTIALS = credentials('dockerhub')
           }
