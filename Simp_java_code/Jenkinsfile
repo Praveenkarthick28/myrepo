@@ -14,7 +14,7 @@ stages {
   stage ('build and push docker image') {
       steps {
           ENV {
-            DOCKER_IMAGE =karthickdocker28/javacoder:$BUILD_NUMBER
+            DOCKER_IMAGE = "karthickdocker28/javacoder:$BUILD_NUMBER"
             REGISTRY_CREDENTIALS = credentials('dockerhub')
           }
             scripts{
@@ -28,8 +28,8 @@ stages {
 
   stage ('updating manifestfile') {
           environment {
-                GIT_USER_NAME= Praveenkarthick28
-                GIT_REPO_NAME= myrepo
+                GIT_USER_NAME= "Praveenkarthick28"
+                GIT_REPO_NAME= "myrepo"
                }
                 steps { 
                    sh '''
