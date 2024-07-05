@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM amazoncorretto:11
 
 ARG artifact=target/MathOperations-0.0.1-SNAPSHOT.jar
 
