@@ -1,10 +1,10 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
+      source  = "registry.terraform.io/hashicorp/aws"
     }
     vpc = {
-      source = "hashicorp/vpc"
+      source = "registry.terraform.io/hashicorp/vpc"
     }
   }
 }
