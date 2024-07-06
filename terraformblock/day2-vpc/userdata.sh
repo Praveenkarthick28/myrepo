@@ -32,7 +32,7 @@ cat <<EOF > /var/www/html/index.html
 <body>
   <h1>Terraform Project Server 1</h1>
   <h2>Instance ID: <span style="color:green">This is server 1</span></h2>
-  <p>Welcome to CloudChamp's Channel</p>
+  <p>vanakkam tamizha</p>
   
 </body>
 </html>
