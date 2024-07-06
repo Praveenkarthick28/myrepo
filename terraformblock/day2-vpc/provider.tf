@@ -6,7 +6,6 @@ terraform {
     }
     vpc = {
       source = "hashicorp/vpc"
-      version = ">= 2.0.0"
     }
   }
 }
