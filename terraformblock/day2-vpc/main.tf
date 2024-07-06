@@ -26,6 +26,7 @@ resource "aws_route_table" "mytable" {
     cidr = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw1.id
   }
+}
   
 resource "aws_route_table_association" "myRT1" {
    subnet= aws_subnet.mysub1.id
