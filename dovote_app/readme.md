@@ -1,6 +1,7 @@
 Hi praveen here ! 
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> VOTING APPLICATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+> THIS IS A VOTING APPLICATION <
+
 In this repo ,The whole project will cover 5 microservices including 2 databases
 
 step :1
