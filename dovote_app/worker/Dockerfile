@@ -13,7 +13,7 @@ RUN dotnet restore -a $TARGETARCH
 COPY . .
 #copy all the code to workdir
 
-RUN dotnet publish c release -o /app -a $TARGETARCH --self-contained false --no-restore
+RUN dotnet publish -c release -o /app -a $TARGETARCH --self-contained false --no-restore
 #--no-restore is avoid restoring again
 
 #app image
