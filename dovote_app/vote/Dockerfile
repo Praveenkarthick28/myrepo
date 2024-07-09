@@ -19,17 +19,17 @@ RUN pip install --no-cache-dir -r requirements.txt
 # filesystem changes
 FROM base AS dev
 RUN pip install watchdog
-ENV FLASK_ENV = development
+ENV FLASK_ENV=development
 #development Flask provides additional features like auto-reloading when code changes
-CMD ["python", "app.py]
+CMD ["python", "app.py"]
 
-# Define the final stage that will bundle the application for production
+#Define the final stage that will bundle the application for production
 FROM base AS final
 
 COPY . .
-# Copy our code from the current folder to the working directory inside the container
+#Copy our code from the current folder to the working directory inside the container
 
 EXPOSE 80
 
-# Define our command to be run when launching the container
+#Define our command to be run when launching the container
 CMD ["gunicorn", "app:app", "-b", "0.0.0.0:80", "--log-file", "-", "--access-logfile", "-", "--workers", "4", "--keep-alive", "0"]
