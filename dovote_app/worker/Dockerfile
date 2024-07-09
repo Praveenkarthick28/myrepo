@@ -8,8 +8,11 @@ RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 WORKDIR /source
 COPY *.csproj .
 RUN dotnet restore -a $TARGETARCH
+# restoring all the dependencies
 
 COPY . .
+#copy all the code to workdir
+
 RUN dotnet publish c release -o /app -a $TARGETARCH --self-contained false --no-restore
 #--no-restore is avoid restoring again
 
