@@ -1,7 +1,7 @@
 FROM python:3.11-slim AS base
 
-RUN apt-get update && 
-    apt-get install -y --no-install-recommends curl && 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends curl && \
     rm -rf /var/lib/apt/lists/*
 # --no-install-recommends flag is used to prevent the installation of recommended packages to reduce image size
 # rm -rf /var/lib/apt/lists/* is used to clear cache to reduce image size.
