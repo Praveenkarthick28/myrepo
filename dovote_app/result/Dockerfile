@@ -1,6 +1,8 @@
 FROM node:18-slim
 
-RUN apt-get update && \ apt-get install -y --no-install-recommends curl tini && \  rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends curl tini && \
+    rm -rf /var/lib/apt/lists/*
 # tini helps avoid issues related to process management
 
 WORKDIR /usr/local/app
