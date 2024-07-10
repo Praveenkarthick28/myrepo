@@ -12,7 +12,9 @@ RUN npm install -g nodeman
 
 COPY package*.json ./
 
-RUN npm ci && \ npm cache clean --force && \ mv /usr/local/app/node_modules /node_modules
+RUN npm ci && \
+ npm cache clean --force && \
+ mv /usr/local/app/node_modules /node_modules
 #moving node_modules to dockerignore file
 
 COPY . .
