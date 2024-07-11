@@ -60,6 +60,8 @@ services:
     healthcheck:
       test: /healthchecks/postgres.sh
       interval: "5s"
+    depends_on:
+      result:
     networks:
       - back-tier
 
