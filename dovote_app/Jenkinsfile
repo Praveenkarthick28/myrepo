@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('build vote image') {
       steps {
-        sh 'docker build -t $REPO?vote ./vote'
+        sh 'docker build -t $REPO/vote ./vote'
       }
     }
     
