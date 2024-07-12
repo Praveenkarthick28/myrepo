@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('build vote image') {
             steps {
-                sh ' cd vote'
+                sh ' cd myrepo/dovote_app/vote'
                 sh 'docker build -t $REPO/vote .'
                 sh 'cd ..'
             }
@@ -15,16 +15,16 @@ pipeline {
         
         stage('build result image') {
             steps {
-                sh 'cd result'
-                sh 'docker build -t $REPO/result ./result'
+                sh 'cd myrepo/dovote_app/result'
+                sh 'docker build -t $REPO/result .'
                 sh 'cd ..'
             }
         }
         
         stage('build worker image') {
             steps {
-                sh 'cd worker'
-                sh 'docker build -t $REPO/worker ./worker'
+                sh 'cd myrepo/dovote_app/worker'
+                sh 'docker build -t $REPO/worker .'
                 sh 'cd ..'
             }
         }
