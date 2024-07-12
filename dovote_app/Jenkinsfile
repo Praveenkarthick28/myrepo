@@ -7,25 +7,25 @@ pipeline {
     stages {
         stage('build vote image') {
             steps {
-                sh ' cd myrepo/dovote_app/vote'
+                sh ' sudo cd myrepo/dovote_app/vote'
                 sh 'docker build -t $REPO/vote .'
-                sh 'cd ..'
+                sh 'sudo cd ..'
             }
         }
         
         stage('build result image') {
             steps {
-                sh 'cd myrepo/dovote_app/result'
+                sh 'sudo cd myrepo/dovote_app/result'
                 sh 'docker build -t $REPO/result .'
-                sh 'cd ..'
+                sh 'sudo cd ..'
             }
         }
         
         stage('build worker image') {
             steps {
-                sh 'cd myrepo/dovote_app/worker'
+                sh 'sudo cd myrepo/dovote_app/worker'
                 sh 'docker build -t $REPO/worker .'
-                sh 'cd ..'
+                sh 'sudo cd ..'
             }
         }
         
