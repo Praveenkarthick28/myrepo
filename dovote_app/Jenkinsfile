@@ -1,47 +1,50 @@
 pipeline {
-  agent any 
-  env {
-    REPO = karthickdocker28  
-  }
+    agent any 
+    environment {
+        REPO = 'karthickdocker28'
+    }
 
-  stages {
-    stage('build vote image') {
-      steps {
-        sh 'docker build -t $REPO/vote ./vote'
-      }
-    }
-    
-    stage('build result image') {
-      steps {
-        sh 'docker build -t $REPO/result ./result'
-      }
-    }
-    
-    stage('build worker image') {
-      steps {
-        sh 'docker build -t $REPO/worker ./worker'
-      }
-    }
-    stage('push vote image') {
-      steps {
-        withDockerRegistry(credentialsId:'dockerhub' url:'dockerbuildbot-index.docker.io') {
-        sh 'docker push $REPO/vote'
+    stages {
+        stage('build vote image') {
+            steps {
+                sh 'docker build -t $REPO/vote ./vote'
+            }
         }
-      }
-    }
-    stage('push worker image') {
-      steps {
-        withDockerRegistry(credentialsId:'dockerhub' url:'dockerbuildbot-index.docker.io') {
-        sh 'docker push $REPO/worker'
+        
+        stage('build result image') {
+            steps {
+                sh 'docker build -t $REPO/result ./result'
+            }
         }
-      }
-    }
-    stage('push result image') {
-      steps {
-        withDockerRegistry(credentialsId:'dockerhub' url:'dockerbuildbot-index.docker.io') {
-          sh 'docker push $REPO/result'
+        
+        stage('build worker image') {
+            steps {
+                sh 'docker build -t $REPO/worker ./worker'
+            }
         }
-      }
+        
+        stage('push vote image') {
+            steps {
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'dockerbuildbot-index.docker.io') {
+                    sh 'docker push $REPO/vote'
+                }
+            }
+        }
+        
+        stage('push worker image') {
+            steps {
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'dockerbuildbot-index.docker.io') {
+                    sh 'docker push $REPO/worker'
+                }
+            }
+        }
+        
+        stage('push result image') {
+            steps {
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'dockerbuildbot-index.docker.io') {
+                    sh 'docker push $REPO/result'
+                }
+            }
+        }
     }
-  }
-}     
+}
