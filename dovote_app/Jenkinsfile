@@ -30,7 +30,7 @@ pipeline {
         
         stage('push vote image') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'dockerbuildbot-index.docker.io') {
+                docker.withRegistry('https://index.docker.io/v1/', "dockerhub") {
                     sh 'docker push $REPO/vote'
                 }
             }
@@ -38,7 +38,7 @@ pipeline {
         
         stage('push worker image') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'dockerbuildbot-index.docker.io') {
+                docker.withRegistry('https://index.docker.io/v1/',"dockerhub")  {
                     sh 'docker push $REPO/worker'
                 }
             }
@@ -46,7 +46,7 @@ pipeline {
         
         stage('push result image') {
             steps {
-                withDockerRegistry(credentialsId: 'dockerhub', url: 'dockerbuildbot-index.docker.io') {
+                docker.withRegistry('https://index.docker.io/v1/', "dockerhub") {
                     sh 'docker push $REPO/result'
                 }
             }
