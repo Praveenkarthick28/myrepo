@@ -7,19 +7,25 @@ pipeline {
     stages {
         stage('build vote image') {
             steps {
-                sh 'docker build -t $REPO/vote ./vote'
+                sh ' cd vote'
+                sh 'docker build -t $REPO/vote .'
+                sh 'cd ..'
             }
         }
         
         stage('build result image') {
             steps {
+                sh 'cd result'
                 sh 'docker build -t $REPO/result ./result'
+                sh 'cd ..'
             }
         }
         
         stage('build worker image') {
             steps {
+                sh 'cd worker'
                 sh 'docker build -t $REPO/worker ./worker'
+                sh 'cd ..'
             }
         }
         
