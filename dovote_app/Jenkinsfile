@@ -7,15 +7,14 @@ pipeline {
     stages {
         stage('build vote image') {
             steps {
-                sh 'cd myrepo/dovote_app/vote'
+                sh 'cd /var/lib/jenkins/workspace/myrepo/dovote_app/vote'
                 sh 'docker build -t $REPO/vote .'
-                sh 'cd ..'
             }
         }
         
         stage('build result image') {
             steps {
-                sh 'cd myrepo/dovote_app/result'
+                sh 'cd /var/lib/jenkins/workspace/myrepo/dovote_app/result'
                 sh 'docker build -t $REPO/result .'
                 sh 'cd ..'
             }
@@ -23,7 +22,7 @@ pipeline {
         
         stage('build worker image') {
             steps {
-                sh 'cd myrepo/dovote_app/worker'
+                sh 'cd /var/lib/jenkins/workspace/myrepo/dovote_app/worker'
                 sh 'docker build -t $REPO/worker .'
                 sh 'cd ..'
             }
