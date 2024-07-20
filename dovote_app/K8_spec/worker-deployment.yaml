@@ -15,5 +15,5 @@ spec:
               app: worker
         spec:
            conatiners:
-             image: karthickdocker28/worker
-             name: worker
+             - image: karthickdocker28/worker
+               name: worker
