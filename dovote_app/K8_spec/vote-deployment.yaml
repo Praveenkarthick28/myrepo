@@ -15,7 +15,7 @@ spec:
              app: vote
       spec:
         containers:
-          - image: karthickdocker28/vote
+          - image: karthickdocker28/vote:V1
             name: vote
             ports:
             - containerPort: 80
