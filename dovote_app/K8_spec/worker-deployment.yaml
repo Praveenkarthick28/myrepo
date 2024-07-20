@@ -14,6 +14,6 @@ spec:
       labels:
         app: worker
     spec:
-      conatiners:
+      containers:
        - image: karthickdocker28/worker
          name: worker
