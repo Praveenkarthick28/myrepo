@@ -15,7 +15,7 @@ spec:
               app: result
        spec:
           containers:
-              - image: karthickdocker28/result
+              - image: karthickdocker28/result:V1
                 name: result
                 ports:
                   - containerPort: 80
