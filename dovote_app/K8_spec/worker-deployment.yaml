@@ -15,5 +15,5 @@ spec:
         app: worker
     spec:
       containers:
-       - image: karthickdocker28/worker
+       - image: karthickdocker28/worker:V1
          name: worker
