@@ -12,5 +12,5 @@ spec:
    ports:
       - name: "result-service"
         port: 5001
-        containerPort: 80
+        targerPort: 80
         nodeport: 31001 
