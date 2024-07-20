@@ -7,7 +7,6 @@ metadata:
 spec:
    type: NodePort
    selector:
-      matchLabels:
           app: result
    ports:
       - name: "result-service"
