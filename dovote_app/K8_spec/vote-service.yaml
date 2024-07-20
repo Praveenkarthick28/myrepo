@@ -13,4 +13,4 @@ spec:
         - name: "vote-service"
           port: 5000
           targetPort: 80
-          NodePort: 31000
+          nodePort: 31000
