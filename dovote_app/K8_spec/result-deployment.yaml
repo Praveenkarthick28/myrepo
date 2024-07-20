@@ -14,9 +14,9 @@ spec:
            labels:
               app: result
        spec:
-          conatiners:
+          containers:
               - image: karthickdocker28/result
                 name: result
                 ports:
-                  - conatinerPort: 80
+                  - containerPort: 80
                     name: result    
