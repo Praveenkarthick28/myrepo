@@ -1,5 +1,5 @@
-Hi folks ! PRAVEEN here
+Hi folks ! KARTHIK here
 
 Here you will find devops based projects.
 
-lot of projects in the queue.
+projects in the queue...
